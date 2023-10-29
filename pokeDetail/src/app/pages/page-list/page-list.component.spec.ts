@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PokeDexListComponent } from './poke-dex-list.component';
+import { PageListComponent } from './page-list.component';
 
 describe('PokeDexListComponent', () => {
-  let component: PokeDexListComponent;
-  let fixture: ComponentFixture<PokeDexListComponent>;
+  let component: PageListComponent;
+  let fixture: ComponentFixture<PageListComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [PokeDexListComponent]
+      declarations: [PageListComponent]
     });
-    fixture = TestBed.createComponent(PokeDexListComponent);
+    fixture = TestBed.createComponent(PageListComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
