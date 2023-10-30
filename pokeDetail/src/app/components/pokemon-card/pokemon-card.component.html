@@ -1,0 +1,22 @@
+<div class="pokemon-card" *ngIf="pokemon">
+  <div class="pokemon-image">
+    <img
+      src="https://assets.pokemon.com/assets/cms2/img/pokedex/detail/{{
+        getNumber(3,pokemon.id)
+      }}.png"
+      alt="Nome do Pokémon"
+    />
+  </div>
+
+  <div class="pokemon-info">
+    <span class="pokemon-number">Nº {{ getNumber(4,pokemon.id) }}</span>
+    <h2 class="pokemon-name">{{ capitalizeFirstLetter(pokemon.name) }}</h2>
+
+    <div class="pokemon-types">
+      <app-pokemon-type
+        [type]="type"
+        *ngFor="let type of pokemon.types"
+      ></app-pokemon-type>
+    </div>
+  </div>
+</div>
