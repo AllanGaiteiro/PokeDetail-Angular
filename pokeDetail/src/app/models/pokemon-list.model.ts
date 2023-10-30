@@ -1,12 +1,14 @@
-import { Pokemon } from "./pokemon.model";
-
+import { PokemonData } from './pokemon-data.model';
+import { Pokemon } from './pokemon.model';
 
 export class PokemonList {
   count: number;
-  results: Pokemon[]; // Um array de objetos Pokemon
+  next: string;
+  pokemons: Pokemon[]; // Um array de objetos Pokemon
 
-  constructor(data: any) {
+  constructor(data: PokemonList) {
     this.count = data.count;
-    this.results = data.results.map((result: any) => new Pokemon(result));
+    this.next = data.next;
+    this.pokemons = data.pokemons || [];
   }
 }
