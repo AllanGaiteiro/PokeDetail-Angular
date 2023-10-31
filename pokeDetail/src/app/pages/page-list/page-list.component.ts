@@ -44,6 +44,7 @@ export class PageListComponent implements OnInit, OnDestroy {
     if (this.filtroValuer) {
       this.loadPokemonSearch(filtroValuer);
     } else {
+      this.pokemonsLenght = this.pokemonList.length;
       this.loadPokemonList();
     }
   }
@@ -51,10 +52,16 @@ export class PageListComponent implements OnInit, OnDestroy {
   private loadPokemonSearch(filtroValuer: string) {
     this.pokedexSubscription = this.pokedexService
       .getPokemon(filtroValuer)
-      .subscribe((res) => {
-        if (res) {
+      .subscribe({
+        next: (res) => {
           this.pokemonList = [res];
-        }
+        },
+        error: (err) => {
+          this.pokemonList = [];
+        },
+        complete: () => {
+          this.pokemonsLenght = this.pokemonList.length;
+        },
       });
   }
 
@@ -62,11 +69,11 @@ export class PageListComponent implements OnInit, OnDestroy {
     if (this.isLoading) {
       // Se já está carregando, não faça nada
       return;
-    };
+    }
     this.pokedexSubscription = this.pokedexService
       .getPokemonList(this.pokemonsLenght)
-      .subscribe(
-        (data: Pokemon[]) => {
+      .subscribe({
+        next: (data: Pokemon[]) => {
           if (data.length > 0) {
             data.map((p) => {
               if (this.pokemonList[p.id - 1]) {
@@ -76,14 +83,15 @@ export class PageListComponent implements OnInit, OnDestroy {
               }
             });
           }
+        },
+        error: (error) => {
+          console.error('Erro ao carregar a lista de Pokémon', error);
+        },
+        complete: () => {
           this.isLoading = false;
           this.pokemonsLenght = this.pokemonList.length;
         },
-        (error) => {
-          console.error('Erro ao carregar a lista de Pokémon', error);
-          this.isLoading = false; // Marque que o carregamento terminou mesmo em caso de erro
-        }
-      );
+      });
   }
 
   checkScroll() {
@@ -93,7 +101,7 @@ export class PageListComponent implements OnInit, OnDestroy {
 
     const threshold = 200;
     const currentPosition =
-      window.pageYOffset ||
+      window.scrollY ||
       document.documentElement.scrollTop ||
       document.body.scrollTop ||
       0;
