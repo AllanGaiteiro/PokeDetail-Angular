@@ -19,6 +19,7 @@ export class PageListComponent implements OnInit, OnDestroy {
   pokemonList: Pokemon[] = [];
   pokedexSubscription!: Subscription;
   filtroValuer: string = '';
+  isLoading = false;
   @HostListener('window:scroll', ['$event'])
   onScroll(event: Event): void {
     this.checkScroll();
@@ -58,15 +59,30 @@ export class PageListComponent implements OnInit, OnDestroy {
   }
 
   loadPokemonList() {
+    if (this.isLoading) {
+      // Se já está carregando, não faça nada
+      return;
+    }
+    console.log('teste', this.totalPokemons);
     this.pokedexSubscription = this.pokedexService
       .getPokemonList(this.totalPokemons)
       .subscribe(
         (data: Pokemon[]) => {
-          this.pokemonList.push(...data);
-          this.totalPokemons += this.pokemonList.length;
+          if (data.length > 0) {
+            data.map((p) => {
+              if (this.pokemonList[p.id - 1]) {
+                return;
+              } else {
+                this.pokemonList.push(p);
+              }
+            });
+          }
+          this.isLoading = false;
+          this.totalPokemons = this.pokemonList.length;
         },
         (error) => {
           console.error('Erro ao carregar a lista de Pokémon', error);
+          this.isLoading = false; // Marque que o carregamento terminou mesmo em caso de erro
         }
       );
   }
@@ -75,8 +91,22 @@ export class PageListComponent implements OnInit, OnDestroy {
     if (this.filtroValuer) {
       return;
     }
-    const element = this.el.nativeElement;
-    if (element.scrollHeight - element.scrollTop === element.clientHeight) {
+
+    const threshold = 200;
+    const currentPosition =
+      window.pageYOffset ||
+      document.documentElement.scrollTop ||
+      document.body.scrollTop ||
+      0;
+    const windowHeight =
+      window.innerHeight ||
+      document.documentElement.clientHeight ||
+      document.body.clientHeight;
+
+    if (
+      document.documentElement.scrollHeight - currentPosition <=
+      windowHeight + threshold
+    ) {
       this.loadPokemonList();
     }
   }
