@@ -10,9 +10,13 @@ import { Pokemon } from '../models/pokemon.model';
 })
 export class PokedexService {
   private baseUrl = 'https://pokeapi.co/api/v2/';
-
   constructor(private http: HttpClient) {}
 
+  private getPokemonByUrl(url: string): Observable<Pokemon> {
+    return this.http
+      .get<PokemonData>(url)
+      .pipe(map((data: PokemonData) => new Pokemon(data)));
+  }
 
   getPokemonList(offset: number = 0, limit: number = 20): Observable<any> {
     console.log(offset, offset + limit);
@@ -21,15 +25,16 @@ export class PokedexService {
       mergeMap((data: any) => {
         const pokemonUrls = data.results.map((result: any) => result.url);
         return forkJoin(
-          pokemonUrls.map((url: string) => this.getPokemonDetails(url))
+          pokemonUrls.map((url: string) => this.getPokemonByUrl(url))
         );
       })
     );
   }
 
-  getPokemonDetails(url: string): Observable<Pokemon> {
-    return this.http
-      .get<PokemonData>(url)
-      .pipe(map((data: PokemonData) => new Pokemon(data)));
+
+
+  getPokemon(pokemon: string): Observable<Pokemon> {
+    const url = this.baseUrl + 'pokemon/' + pokemon;
+    return this.getPokemonByUrl(url);
   }
 }

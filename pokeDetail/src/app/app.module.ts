@@ -7,18 +7,22 @@ import { HttpClientModule } from '@angular/common/http';
 import { PageListComponent } from './pages/page-list/page-list.component';
 import { PokemonCardComponent } from './components/pokemon-card/pokemon-card.component';
 import { PokemonTypeComponent } from './components/pokemon-type/pokemon-type.component';
+import { FilterComponent } from './components/filter/filter.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     PageListComponent,
     PokemonCardComponent,
-    PokemonTypeComponent
+    PokemonTypeComponent,
+    FilterComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
