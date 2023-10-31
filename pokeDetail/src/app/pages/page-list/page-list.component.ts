@@ -25,7 +25,7 @@ export class PageListComponent implements OnInit, OnDestroy {
     this.checkScroll();
   }
 
-  totalPokemons: number = 0;
+  pokemonsLenght: number = 0;
 
   constructor(private pokedexService: PokedexService, private el: ElementRef) {}
 
@@ -62,10 +62,9 @@ export class PageListComponent implements OnInit, OnDestroy {
     if (this.isLoading) {
       // Se já está carregando, não faça nada
       return;
-    }
-    console.log('teste', this.totalPokemons);
+    };
     this.pokedexSubscription = this.pokedexService
-      .getPokemonList(this.totalPokemons)
+      .getPokemonList(this.pokemonsLenght)
       .subscribe(
         (data: Pokemon[]) => {
           if (data.length > 0) {
@@ -78,7 +77,7 @@ export class PageListComponent implements OnInit, OnDestroy {
             });
           }
           this.isLoading = false;
-          this.totalPokemons = this.pokemonList.length;
+          this.pokemonsLenght = this.pokemonList.length;
         },
         (error) => {
           console.error('Erro ao carregar a lista de Pokémon', error);
