@@ -1,0 +1,12 @@
+<div class="filtro-container">
+  <div class="filter-input-template"></div>
+  <label for="filtro">Filtrar Pokémon por nome ou id:</label>
+  
+  <input
+    type="text"
+    id="filtro"
+    [(ngModel)]="filtroValor"
+    (input)="setfilter()"
+    placeholder="Digite o nome ou id"
+  />
+</div>

@@ -1,0 +1,42 @@
+.filtro-container {
+  width: 100vw;
+  height: 70px;
+  color: white;
+  text-align: center;
+  margin-bottom: 100px;
+  
+}
+
+label {
+  display: block;
+  padding-top: 10px;
+  background-color: #616161;
+  font-size: 32px;
+  transition: background-color 0.3s; /* Adicionado transição */
+}
+
+.filter-input-template {
+    position: absolute;
+    left: calc(50% - (500px /2) - 30px ) ;
+    border-top: 80px solid #616161;
+    border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
+    /* removi a altura negativa */
+    width: 500px;
+    margin: auto;
+    z-index: -2;
+}
+
+input {
+    /* ajustei o valor da margem */
+    width: 200px;
+    margin: 0px;
+    transition: width 0.3s; /* Adicionado transição */
+    border: none;
+    outline: none;
+    font-size: 18px; /* Ajuste o tamanho da fonte conforme necessário */
+}
+
+input:focus {
+    width: 300px; /* Adicionado efeito de expansão */
+}
