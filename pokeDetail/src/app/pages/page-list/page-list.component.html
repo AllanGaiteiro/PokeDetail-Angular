@@ -1,6 +1,8 @@
 <div class="pokedex-list">
+  <app-filter  (filtroAlterado)="onFiltroAlterado($event)"></app-filter>
   <app-pokemon-card
     [pokemon]="pokemon"
+    [routerLink]="['/pokemon', pokemon.id]"
     *ngFor="let pokemon of pokemonList"
   ></app-pokemon-card>
 </div>

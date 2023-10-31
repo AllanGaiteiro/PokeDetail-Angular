@@ -23,6 +23,12 @@ export class PageListComponent implements OnInit {
     this.loadPokemonList();
   }
 
+  onFiltroAlterado(filtroValor: string) {
+    console.log('Valor do filtro:', filtroValor);
+    // Aqui você pode implementar a lógica para filtrar os pokémons, por exemplo, chamando uma API
+  }
+  
+
   loadPokemonList() {
     this.pokedexService.getPokemonList(this.totalPokemons).subscribe(
       (data: Pokemon[]) => {
