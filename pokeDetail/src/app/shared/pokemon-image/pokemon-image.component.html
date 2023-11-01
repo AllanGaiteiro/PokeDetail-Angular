@@ -1,0 +1,8 @@
+<div *ngIf="pokemonId && pokemonName" >
+    <img
+      src="https://assets.pokemon.com/assets/cms2/img/pokedex/{{type}}/{{
+        getNumber(3, pokemonId)
+      }}.png"
+      alt="{{ 'imagen do ' + pokemonName }}"
+    />
+  </div>
