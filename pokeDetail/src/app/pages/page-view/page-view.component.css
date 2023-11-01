@@ -1,0 +1,21 @@
+.pokemon-container {
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  max-width: 1200px;
+  margin: auto;
+  text-align: center;
+}
+
+.pokemon-section {
+  display: flex;
+  justify-content: space-between;
+}
+
+.pokemon-container h1 {
+  font-size: 50px; /* Tamanho da fonte do nome do Pokémon */
+  color: #161616; /* Cor do texto */
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2); /* Sombra do texto para destacar */
+  text-align: center; /* Centraliza o texto */
+  margin-bottom: 30px; /* Espaçamento abaixo do título */
+}

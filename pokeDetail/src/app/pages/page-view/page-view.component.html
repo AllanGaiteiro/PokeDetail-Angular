@@ -1,1 +1,14 @@
-<p>pokemon works!</p>
+<div *ngIf="pokemon" class="pokemon-container">
+  <h1>{{ pokemon.name | uppercase }}</h1>
+  <div class="pokemon-section">
+    <app-pokemon-details [pokemon]="pokemon"></app-pokemon-details>
+    <app-pokemon-image
+      [pokemonId]="pokemon.id"
+      [pokemonName]="pokemon.name"
+      type="full"
+    ></app-pokemon-image>
+    <app-pokemon-stats [stats]="pokemon.stats"></app-pokemon-stats>
+  </div>
+
+  <!-- Aqui você pode adicionar conteúdo estático que não está disponível na interface, como imagens ou outras informações -->
+</div>
