@@ -1,0 +1,16 @@
+
+
+.pokemon-stats {
+    min-width: 300px;
+    background-color: #f9f9f9; /* Cor de fundo do "card" */
+    border-radius: 10px; /* Cantos arredondados */
+    padding: 20px; /* Espaçamento interno */
+    margin-top: 20px; /* Espaçamento externo */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para dar profundidade */
+  }
+  
+
+.pokemon-stats ul {
+  list-style-type: none;
+  padding: 0;
+}

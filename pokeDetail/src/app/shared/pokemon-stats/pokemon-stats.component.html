@@ -1,0 +1,11 @@
+<div class="pokemon-stats" *ngIf="stats">
+  <h3>Stats</h3>
+  <ul>
+    <li *ngFor="let stat of stats">
+      <div>
+        <strong>{{ stat.name }}:</strong>
+      </div>
+      <app-stat-bar [value]="stat.baseStat"></app-stat-bar>
+    </li>
+  </ul>
+</div>
