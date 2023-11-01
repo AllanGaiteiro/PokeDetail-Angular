@@ -3,28 +3,16 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HttpClientModule } from '@angular/common/http';
-import { PageListComponent } from './pages/page-list/page-list.component';
-import { PokemonCardComponent } from './components/pokemon-card/pokemon-card.component';
-import { PokemonTypeComponent } from './components/pokemon-type/pokemon-type.component';
-import { FilterComponent } from './components/filter/filter.component';
-import { FormsModule } from '@angular/forms';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    PageListComponent,
-    PokemonCardComponent,
-    PokemonTypeComponent,
-    FilterComponent
-  ],
+  declarations: [AppComponent],
   imports: [
-    BrowserModule,
-    HttpClientModule,
     AppRoutingModule,
-    FormsModule
+    SharedModule,
   ],
+  exports: [SharedModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

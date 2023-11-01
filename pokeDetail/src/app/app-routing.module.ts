@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { PageListComponent } from './pages/page-list/page-list.component';
 import { PageViewComponent } from './pages/page-view/page-view.component';
 import { BrowserModule } from '@angular/platform-browser';
+import { SharedModule } from './shared/shared.module';
 
 const routes: Routes = [
   { path: '', redirectTo: '/lista', pathMatch: 'full' },
@@ -11,7 +12,8 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes), BrowserModule],
+  declarations: [PageViewComponent, PageListComponent],
+  imports: [RouterModule.forRoot(routes), BrowserModule, SharedModule],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}
