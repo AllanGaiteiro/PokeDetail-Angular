@@ -8,7 +8,6 @@ import { PokedexService } from 'src/app/services/pokedex.service';
   templateUrl: './pokemon-move.component.html',
   styleUrls: [
     './pokemon-move.component.css',
-    '../pokemon-type/pokemon-type.component.css',
   ],
 })
 export class PokemonMoveComponent implements OnInit, OnDestroy {
