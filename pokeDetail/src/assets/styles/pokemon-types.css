@@ -1,0 +1,86 @@
+@import './pokemon-type-color.css';
+
+.type-grass {
+  background-color: var(--grass-color);
+}
+
+.type-poison {
+  background-color: var(--poison-color);
+  color: white;
+}
+
+.type-fire {
+  background-color: var(--fire-color);
+  color: white;
+}
+
+.type-water {
+  background-color: var(--water-color);
+  color: white;
+}
+
+.type-bug {
+  background-color: var(--bug-color);
+  color: white;
+}
+
+.type-normal {
+  background-color: var(--normal-color);
+}
+
+.type-electric {
+  background-color: var(--electric-color);
+}
+
+.type-fairy {
+  background-color: var(--fairy-color);
+}
+
+.type-psychic {
+  background-color: var(--psychic-color);
+  color: white;
+}
+
+.type-fighting {
+  background-color: var(--fighting-color);
+  color: white;
+}
+
+.type-steel {
+  background-color: var(--steel-color);
+}
+
+.type-rock {
+  background-color: var(--rock-color);
+  color: white;
+}
+
+.type-ground {
+  background-color: var(--ground-color);
+  color: white;
+}
+
+.type-flying {
+  background-color: var(--flying-color);
+  color: white;
+}
+
+.type-ghost {
+  background-color: var(--ghost-color);
+  color: white;
+}
+
+.type-ice {
+  background-color:var(--ice-color);
+  color: white;
+}
+
+.type-dragon {
+  background-color: var(--dragon-color);
+  color: white;
+}
+
+.type-dark {
+  background-color: var(--dark-color);
+  color: white;
+}

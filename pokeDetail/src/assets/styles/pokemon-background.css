@@ -1,0 +1,92 @@
+@import './pokemon-type-color.css';
+
+/* Grass type */
+.pokemon-grass {
+  background-image: -webkit-linear-gradient(30deg, #fff 50%, var(--grass-color) 50%);
+}
+
+/* Poison type */
+.pokemon-poison {
+  background-image: -webkit-linear-gradient(30deg, #fff 50%, var(--poison-color) 50%);
+}
+
+/* Fire type */
+.pokemon-fire {
+  background-image: -webkit-linear-gradient(30deg, #fff 50%, var(--fire-color) 50%);
+}
+
+/* Water type */
+.pokemon-water {
+  background-image: -webkit-linear-gradient(30deg, #fff 50%, var(--water-color) 50%);
+}
+
+/* Bug type */
+.pokemon-bug {
+  background-image: -webkit-linear-gradient(30deg, #fff 50%, var(--bug-color) 50%);
+}
+
+/* Normal type */
+.pokemon-normal {
+  background-image: -webkit-linear-gradient(30deg, #fff 50%, var(--normal-color) 50%);
+}
+
+/* Electric type */
+.pokemon-electric {
+  background-image: -webkit-linear-gradient(30deg, #fff 50%, var(--electric-color) 50%);
+}
+
+/* Fairy type */
+.pokemon-fairy {
+  background-image: -webkit-linear-gradient(30deg, #fff 50%, var(--fairy-color) 50%);
+}
+
+/* Psychic type */
+.pokemon-psychic {
+  background-image: -webkit-linear-gradient(30deg, #fff 50%, var(--psychic-color) 50%);
+}
+
+/* Fighting type */
+.pokemon-fighting {
+  background-image: -webkit-linear-gradient(30deg, #fff 50%, var(--fighting-color) 50%);
+}
+
+/* Steel type */
+.pokemon-steel {
+  background-image: -webkit-linear-gradient(30deg, #fff 50%, var(--steel-color) 50%);
+}
+
+/* Rock type */
+.pokemon-rock {
+  background-image: -webkit-linear-gradient(30deg, #fff 50%, var(--rock-color) 50%);
+}
+
+/* Ground type */
+.pokemon-ground {
+  background-image: -webkit-linear-gradient(30deg, #fff 50%, var(--ground-color) 50%);
+}
+
+/* Ghost type */
+.pokemon-ghost {
+  background-image: -webkit-linear-gradient(30deg, #fff 50%, var(--ghost-color) 50%);
+}
+
+/* Flying type */
+.pokemon-flying {
+  background-image: -webkit-linear-gradient(30deg, #fff 50%, var(--flying-color) 50%);
+}
+
+/* Ice type */
+.pokemon-ice {
+  background-image: -webkit-linear-gradient(30deg, #fff 50%, var(--ice-color) 50%);
+}
+
+/* Dragon type */
+.pokemon-dragon {
+  background-image: -webkit-linear-gradient(30deg, #fff 50%, var(--dragon-color) 50%);
+}
+
+/* Dark type */
+.pokemon-dark {
+  background-image: -webkit-linear-gradient(30deg, #fff 50%, var(--dark-color) 50%);
+}
+/* Continue adding more types and styles as needed */
