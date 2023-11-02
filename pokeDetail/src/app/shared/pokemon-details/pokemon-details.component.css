@@ -4,6 +4,7 @@
     padding: 20px; /* Espaçamento interno */
     margin-top: 20px; /* Espaçamento externo */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para dar profundidade */
+    text-align: left;
   }
   
   .pokemon-details h3 {
