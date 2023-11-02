@@ -11,7 +11,6 @@ import { PokedexService } from 'src/app/services/pokedex.service';
   templateUrl: './pokemon-ability.component.html',
   styleUrls: [
     './pokemon-ability.component.css',
-    '../pokemon-type/pokemon-type.component.css',
   ],
 })
 export class PokemonAbilityComponent implements OnInit, OnDestroy {
