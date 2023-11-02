@@ -1,0 +1,11 @@
+<div class="movies-card">
+  <h3>Moves</h3>
+  <div *ngIf="moves && moves.length > 0" class="movies-list">
+    <ul>
+      <app-pokemon-move
+        [move]="move"
+        *ngFor="let move of moves"
+      ></app-pokemon-move>
+    </ul>
+  </div>
+</div>
