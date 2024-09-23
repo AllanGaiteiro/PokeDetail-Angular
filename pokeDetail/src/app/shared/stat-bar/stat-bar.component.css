@@ -1,15 +1,16 @@
 .stat-bar-container {
-    width: 100%;
-    background-color: #e0e0e0; /* Cor de fundo da barra de progresso */
-    border-radius: 5px; /* Cantos arredondados da barra de progresso */
-    margin-bottom: 15px; /* Espaçamento entre as barras */
-  }
-  
-  .stat-bar {
-    height: 25px; /* Altura da barra de progresso */
-    line-height: 25px; /* Centraliza o texto verticalmente */
-    color: white; /* Cor do texto */
-    text-align: center; /* Centraliza o texto horizontalmente */
-    background-color: #3b5998; /* Cor da barra de progresso */
-    border-radius: 5px; /* Cantos arredondados da barra de progresso */
-  }
+  width: 100%;
+  background-color: #e0e0e0; /* Cor de fundo da barra de progresso */
+  border-radius: 5px; /* Cantos arredondados da barra de progresso */
+  margin-bottom: 15px; /* Espaçamento entre as barras */
+}
+
+.stat-bar {
+  height: 25px; /* Altura da barra de progresso */
+  line-height: 25px; /* Centraliza o texto verticalmente */
+  color: white; /* Cor do texto */
+  text-align: center; /* Centraliza o texto horizontalmente */
+  background-color: #3b5998; /* Cor da barra de progresso */
+  border-radius: 5px; /* Cantos arredondados da barra de progresso */
+  transition: width 1s ease; /* Adiciona a animação à largura */
+}

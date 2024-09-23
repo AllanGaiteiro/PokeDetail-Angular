@@ -1,4 +1,4 @@
-<div class="pokemon-card" *ngIf="pokemon">
+<div class="pokemon-card" *ngIf="pokemon" [ngStyle]="getBackgroundColor()">
   <div class="pokemon-image">
     <app-pokemon-image
       [pokemonId]="pokemon.id"

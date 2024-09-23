@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router'; // Import necessário para pegar o parâmetro da rota
+import { ActivatedRoute } from '@angular/router'; 
 import { Pokemon } from 'src/app/models/pokemon.model';
 import { PokedexService } from 'src/app/services/pokedex.service';
 
@@ -9,24 +9,40 @@ import { PokedexService } from 'src/app/services/pokedex.service';
   styleUrls: ['./page-view.component.css']
 })
 export class PageViewComponent implements OnInit {
-  pokemonId?: string; // id vem da URL
-  pokemon: Pokemon | null = null; // Definindo a propriedade
+  pokemonId?: string; 
+  pokemon: Pokemon | null = null; 
 
   constructor(
-    private route: ActivatedRoute, // Injetando o ActivatedRoute
-    private pokemonService: PokedexService // Injetando o serviço para buscar os dados
+    private route: ActivatedRoute,
+    private pokemonService: PokedexService 
   ) {}
 
   ngOnInit(): void {
-    // Pegando o id da URL usando ActivatedRoute
-    this.pokemonId = this.route.snapshot.paramMap.get('id') || undefined;
+    this.route.paramMap.subscribe(params => {
+      this.pokemonId = params.get('id') || undefined;
 
-    // Verificando se o ID foi capturado corretamente
-    if (this.pokemonId) {
-      // Chamando o serviço para pegar o Pokémon pelo ID
-      this.pokemonService.getPokemon(this.pokemonId).subscribe(pokemon => {
-        this.pokemon = pokemon;
-      });
+      if (this.pokemonId) {
+        this.pokemonService.getPokemon(this.pokemonId).subscribe(pokemon => {
+          this.pokemon = pokemon;
+        });
+      }
+    });
+  }
+
+  getBackgroundColor() {
+    const types = this.pokemon?.types;
+    if (!types?.length) return {};
+    const colors = types.map(type => `var(--${type}-color)`);
+    if (colors.length === 2) {
+      const gradient = `linear-gradient(135deg, ${colors[0]} 50%, ${colors[1]} 50%)`;
+      return { background: gradient };
     }
+      if (colors.length === 1) {
+      return { background: colors[0] };
+    }
+
+    const step = 100 / colors.length;
+    const gradient = `linear-gradient(135deg, ${colors.map((color, index) => `${color} ${index * step}%`).join(', ')})`;
+    return { background: gradient };
   }
 }

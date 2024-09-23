@@ -1,0 +1,22 @@
+<div *ngIf="evolutions.length" class="evolution-container">
+  <h3>Evoluções</h3>
+  <div class="evolution-flow">
+    <div
+      *ngFor="let evolution of evolutions; let i = index"
+      class="evolution-stage"
+    >
+      <div class="evolution-card" [routerLink]="['/pokemon', evolution.id]">
+        <img
+          [src]="getPokemonImageUrl(evolution.id)"
+          alt="{{ evolution.name }}"
+        />
+        <h4>{{ evolution.name | uppercase }}</h4>
+      </div>
+
+      <!-- Adiciona uma seta entre as evoluções, exceto após o último Pokémon -->
+      <div *ngIf="i < evolutions.length - 1" class="evolution-arrow">
+        <span>→</span>
+      </div>
+    </div>
+  </div>
+</div>

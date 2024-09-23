@@ -11,6 +11,9 @@ import { PokemonImageComponent } from './pokemon-image/pokemon-image.component';
 import { StatBarComponent } from './stat-bar/stat-bar.component';
 import { PokemonStatsComponent } from './pokemon-stats/pokemon-stats.component';
 import { PokemonAbilityComponent } from './pokemon-ability/pokemon-ability.component';
+import { PokemonVarietiesComponent } from './pokemon-varieties/pokemon-varieties.component';
+import { PokemonEvolutionComponent } from './pokemon-evolution/pokemon-evolution.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -21,9 +24,11 @@ import { PokemonAbilityComponent } from './pokemon-ability/pokemon-ability.compo
     PokemonImageComponent,
     StatBarComponent,
     PokemonStatsComponent,
-    PokemonAbilityComponent
+    PokemonAbilityComponent,
+    PokemonVarietiesComponent,
+    PokemonEvolutionComponent
   ],
-  imports: [BrowserModule, HttpClientModule, FormsModule],
+  imports: [BrowserModule, HttpClientModule, FormsModule,RouterModule],
   exports: [
     PokemonCardComponent,
     PokemonTypeComponent,
@@ -31,7 +36,9 @@ import { PokemonAbilityComponent } from './pokemon-ability/pokemon-ability.compo
     PokemonDetailsComponent,
     PokemonImageComponent,
     PokemonStatsComponent,
-    PokemonAbilityComponent
+    PokemonAbilityComponent,
+    PokemonVarietiesComponent,
+    PokemonEvolutionComponent
   ],
 })
 export class SharedModule {}

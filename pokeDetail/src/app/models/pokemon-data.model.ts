@@ -10,4 +10,7 @@ export interface PokemonData {
     stat: { name: string };
     base_stat: number;
   }[];
+  moves: {
+    move: { name: string, url: string };
+  }[];
 }

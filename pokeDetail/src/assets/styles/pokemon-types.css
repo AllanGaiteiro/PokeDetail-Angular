@@ -1,86 +1,104 @@
 @import './pokemon-type-color.css';
 
 .type-grass {
+  border: 1px solid rgba(0, 0, 0, 0.185);
   background-color: var(--grass-color);
 }
 
 .type-poison {
+  border: 1px solid rgba(0, 0, 0, 0.185);
   background-color: var(--poison-color);
   color: white;
 }
 
 .type-fire {
+  border: 1px solid rgba(0, 0, 0, 0.185);
   background-color: var(--fire-color);
   color: white;
 }
 
 .type-water {
+  border: 1px solid rgba(0, 0, 0, 0.185);
   background-color: var(--water-color);
   color: white;
 }
 
 .type-bug {
+  border: 1px solid rgba(0, 0, 0, 0.185);
   background-color: var(--bug-color);
   color: white;
 }
 
 .type-normal {
+  border: 1px solid rgba(0, 0, 0, 0.185);
   background-color: var(--normal-color);
 }
 
 .type-electric {
+  border: 1px solid rgba(0, 0, 0, 0.185);
   background-color: var(--electric-color);
 }
 
 .type-fairy {
+  border: 1px solid rgba(0, 0, 0, 0.185);
   background-color: var(--fairy-color);
 }
 
 .type-psychic {
+  border: 1px solid rgba(0, 0, 0, 0.185);
   background-color: var(--psychic-color);
   color: white;
 }
 
 .type-fighting {
+  border: 1px solid rgba(0, 0, 0, 0.185);
   background-color: var(--fighting-color);
   color: white;
 }
 
 .type-steel {
+  border: 1px solid rgba(0, 0, 0, 0.185);
   background-color: var(--steel-color);
 }
 
 .type-rock {
+  border: 1px solid rgba(0, 0, 0, 0.185);
   background-color: var(--rock-color);
   color: white;
 }
 
 .type-ground {
+  border: 1px solid rgba(0, 0, 0, 0.185);
   background-color: var(--ground-color);
   color: white;
 }
 
 .type-flying {
+  border: 1px solid rgba(0, 0, 0, 0.185);
   background-color: var(--flying-color);
   color: white;
 }
 
 .type-ghost {
+  border: 1px solid rgba(0, 0, 0, 0.185);
   background-color: var(--ghost-color);
   color: white;
 }
 
 .type-ice {
+  border: 1px solid rgba(0, 0, 0, 0.185);
   background-color:var(--ice-color);
   color: white;
 }
 
 .type-dragon {
+  border: 1px solid rgba(0, 0, 0, 0.185);
   background-color: var(--dragon-color);
   color: white;
 }
 
 .type-dark {
+  border: 1px solid rgba(0, 0, 0, 0.185);
   background-color: var(--dark-color);
   color: white;
 }

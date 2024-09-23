@@ -1,0 +1,10 @@
+<div class="varieties-container" *ngIf="varieties.length">
+  <h3>Variações</h3>
+  <div class="varieties-grid">
+    <div *ngFor="let variety of varieties" class="variety-card"
+    [routerLink]="['/pokemon', variety.id]">
+      <img [src]="getPokemonImageUrl(variety.id)" alt="{{ variety.name }}" />
+      <h4>{{ variety.name | uppercase }}</h4>
+    </div>
+  </div>
+</div>

@@ -1,4 +1,4 @@
-<div *ngIf="pokemon" class="pokemon-container">
+<div *ngIf="pokemon" class="pokemon-container" [ngStyle]="getBackgroundColor()">
   <h1>{{ pokemon.name | uppercase }}</h1>
   <div class="pokemon-section">
     <app-pokemon-details [pokemon]="pokemon"></app-pokemon-details>
@@ -10,5 +10,25 @@
     <app-pokemon-stats [stats]="pokemon.stats"></app-pokemon-stats>
   </div>
 
-  <!-- Aqui você pode adicionar conteúdo estático que não está disponível na interface, como imagens ou outras informações -->
+  <div class="pokemon-more">
+    <div class="section-abilities">
+      <p>
+        <strong>Abilities</strong>
+      </p>
+      <div class="section-abilities-list">
+        <app-pokemon-ability
+          *ngFor="let ability of pokemon?.abilities"
+          [ability]="ability"
+        ></app-pokemon-ability>
+      </div>
+    </div>
+    <div>
+      <app-pokemon-varieties
+        [pokemonName]="pokemon.name"
+      ></app-pokemon-varieties>
+      <app-pokemon-evolution
+        [pokemonName]="pokemon.name"
+      ></app-pokemon-evolution>
+    </div>
+  </div>
 </div>

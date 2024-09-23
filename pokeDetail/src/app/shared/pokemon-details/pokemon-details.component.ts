@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Pokemon } from 'src/app/models/pokemon.model';
+import { Pokemon, PokemonType } from 'src/app/models/pokemon.model';
 
 @Component({
   selector: 'app-pokemon-details',
@@ -8,7 +8,16 @@ import { Pokemon } from 'src/app/models/pokemon.model';
 })
 export class PokemonDetailsComponent implements OnInit {
   @Input() pokemon?: Pokemon;
+  backgroundColor: string | undefined;
+  type: string | undefined;
   ngOnInit(): void {
-    console.log(this.pokemon)
+    this.type = this.pokemon?.types[0] || PokemonType.normal;
+  }
+
+  getAbilityBackgroundColor() {
+    if (!this.type) return {};
+    return {
+      'background-color': `var(--${this.type}-color)`
+    };
   }
 }

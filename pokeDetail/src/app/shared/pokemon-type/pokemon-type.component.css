@@ -3,4 +3,5 @@
   border-radius: 5px;
   margin-right: 10px; /* Atualizado para 10px */
   margin-bottom: 10px; /* Adicionado para espaçamento vertical */
+  border: 1 solid black;
 }

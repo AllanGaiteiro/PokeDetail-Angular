@@ -19,3 +19,26 @@
   text-align: center; /* Centraliza o texto */
   margin-bottom: 30px; /* Espaçamento abaixo do título */
 }
+
+
+
+.section-abilities {
+  text-align: center;
+  border: 1px solid #ccc; /* Apenas para visualização */
+  background-color: #ffffff6c; /* Cor de fundo do "card" */
+  border-radius: 10px; /* Cantos arredondados */
+  padding: 20px; /* Espaçamento interno */
+  margin-top: 20px; /* Espaçamento externo */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para dar profundidade */
+}
+.section-abilities-list {
+  max-height: 300px; /* Define a altura máxima da lista */
+  overflow-y: auto;  /* Habilita o scroll vertical */
+  padding: 10px; /* Espaçamento interno */
+}
+
+.pokemon-more{
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 16px;
+}

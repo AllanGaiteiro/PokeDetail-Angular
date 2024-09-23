@@ -1,7 +1,7 @@
 import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import {
-  PokemonAbilitiesData,
+  Pokemon,
   PokemonType,
 } from 'src/app/models/pokemon.model';
 import { PokedexService } from 'src/app/services/pokedex.service';
@@ -15,7 +15,7 @@ import { PokedexService } from 'src/app/services/pokedex.service';
   ],
 })
 export class PokemonAbilityComponent implements OnInit, OnDestroy {
-  @Input() ability?: PokemonAbilitiesData['ability'];
+  @Input() ability?: Pokemon['abilities'][0]
 
   type?: PokemonType = PokemonType.normal;
   pokemonAbilitySubscripition?: Subscription;

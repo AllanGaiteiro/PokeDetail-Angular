@@ -20,7 +20,6 @@ export class PokedexService {
   }
 
   getPokemonList(offset: number = 0, limit: number = 20): Observable<any> {
-    console.log(offset, offset + limit);
     const url = `${this.baseUrl}pokemon/?offset=${offset}&limit=${limit}`;
     return this.http.get(url).pipe(
       mergeMap((data: any) => {
@@ -34,11 +33,45 @@ export class PokedexService {
 
   getPokemonAbilityType(url: any): Observable<PokemonType> {
     return this.http
-      .get<PokemonType>(url)
-      .pipe(map((res) => {
-        console.log('getPokemonAbilityType', res)
-        return res
-      }));
+      .get<{ type: { name: PokemonType } }>(url)
+      .pipe(map((res) => res.type.name));
+  }
+
+  getPokemonVarieties(pokemonName: string): Observable<any> {
+    return this.http.get(`${this.baseUrl}/pokemon-species/${pokemonName}`).pipe(
+      mergeMap((data: any) => {
+        const pokemonUrls = data.varieties.map((result: any) => result.pokemon.url);
+        return forkJoin(
+          pokemonUrls.map((url: string) => this.getPokemonByUrl(url))
+        );
+      })
+    );
+  }
+
+  getEvolutionChain(pokemonName: string): Observable<any> {
+    return this.http.get(`${this.baseUrl}/pokemon-species/${pokemonName}`).pipe(
+      mergeMap((speciesData: any) => {
+        const evolutionUrl = speciesData.evolution_chain.url;
+        return this.getEvolutionChainByUrl(evolutionUrl).pipe(
+          mergeMap((evolutionChain: any) => {
+            let currentStage = evolutionChain.chain;
+            const evolutionRequests = [];
+
+            while (currentStage) {
+              const pokemonRequest = this.getPokemon(currentStage.species.name);
+              evolutionRequests.push(pokemonRequest);
+              currentStage = currentStage.evolves_to[0]; 
+            }
+
+            return forkJoin(evolutionRequests);
+          })
+        );
+      })
+    );
+  }
+
+  getEvolutionChainByUrl(url: string): Observable<any> {
+    return this.http.get(url);
   }
 
   getPokemon(pokemon: string): Observable<Pokemon> {

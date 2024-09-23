@@ -22,5 +22,20 @@ export class PokemonCardComponent {
     return text.charAt(0).toUpperCase() + text.slice(1);
   }
 
+  getBackgroundColor() {
+    const types = this.pokemon?.types;
+    if (!types?.length) return {};
+    const colors = types.map(type => `var(--${type}-color)`);
+    if (colors.length === 2) {
+      const gradient = `linear-gradient(135deg, ${colors[0]} 50%, ${colors[1]} 50%)`;
+      return { background: gradient };
+    }
+    if (colors.length === 1) {
+      return { background: colors[0] };
+    }
+    const step = 100 / colors.length;
+    const gradient = `linear-gradient(135deg, ${colors.map((color, index) => `${color} ${index * step}%`).join(', ')})`;
+    return { background: gradient };
+  }
 
 }

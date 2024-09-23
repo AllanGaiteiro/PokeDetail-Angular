@@ -67,14 +67,12 @@ export class PageListComponent implements OnInit, OnDestroy {
 
   loadPokemonList() {
     if (this.isLoading) {
-      // Se já está carregando, não faça nada
       return;
     }
     this.pokedexSubscription = this.pokedexService
       .getPokemonList(this.pokemonsLenght)
       .subscribe({
         next: (data: Pokemon[]) => {
-          console.log('getPokemonList',data)
           if (data.length > 0) {
             data.map((p) => {
               if (this.pokemonList[p.id - 1]) {

@@ -4,7 +4,7 @@ import { Pokemon } from './pokemon.model';
 export class PokemonList {
   count: number;
   next: string;
-  pokemons: Pokemon[]; // Um array de objetos Pokemon
+  pokemons: Pokemon[];
 
   constructor(data: PokemonList) {
     this.count = data.count;

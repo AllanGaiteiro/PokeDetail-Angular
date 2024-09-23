@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Pokemon } from 'src/app/models/pokemon.model';
 
 @Component({
@@ -6,6 +6,11 @@ import { Pokemon } from 'src/app/models/pokemon.model';
   templateUrl: './pokemon-stats.component.html',
   styleUrls: ['./pokemon-stats.component.css']
 })
-export class PokemonStatsComponent {
+export class PokemonStatsComponent implements OnInit {
   @Input() stats?: Pokemon['stats'];
+
+  ngOnInit(): void {
+  }
+
+
 }
