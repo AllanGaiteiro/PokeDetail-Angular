@@ -10,6 +10,7 @@ import { PokemonDetailsComponent } from './pokemon-details/pokemon-details.compo
 import { PokemonImageComponent } from './pokemon-image/pokemon-image.component';
 import { StatBarComponent } from './stat-bar/stat-bar.component';
 import { PokemonStatsComponent } from './pokemon-stats/pokemon-stats.component';
+import { PokemonAbilityComponent } from './pokemon-ability/pokemon-ability.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { PokemonStatsComponent } from './pokemon-stats/pokemon-stats.component';
     PokemonImageComponent,
     StatBarComponent,
     PokemonStatsComponent,
+    PokemonAbilityComponent
   ],
   imports: [BrowserModule, HttpClientModule, FormsModule],
   exports: [
@@ -28,7 +30,8 @@ import { PokemonStatsComponent } from './pokemon-stats/pokemon-stats.component';
     FilterComponent,
     PokemonDetailsComponent,
     PokemonImageComponent,
-    PokemonStatsComponent
+    PokemonStatsComponent,
+    PokemonAbilityComponent
   ],
 })
 export class SharedModule {}

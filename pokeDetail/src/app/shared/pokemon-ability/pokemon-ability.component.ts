@@ -6,6 +6,7 @@ import {
 } from 'src/app/models/pokemon.model';
 import { PokedexService } from 'src/app/services/pokedex.service';
 
+
 @Component({
   selector: 'app-pokemon-ability',
   templateUrl: './pokemon-ability.component.html',
@@ -16,17 +17,17 @@ import { PokedexService } from 'src/app/services/pokedex.service';
 export class PokemonAbilityComponent implements OnInit, OnDestroy {
   @Input() ability?: PokemonAbilitiesData['ability'];
 
-  type?: PokemonType = PokemonType.Normal;
+  type?: PokemonType = PokemonType.normal;
   pokemonAbilitySubscripition?: Subscription;
 
-  constructor(private pokedexService: PokedexService) {}
+  constructor(private pokedexService: PokedexService) { }
 
   ngOnInit(): void {
     if (this.ability?.url) {
       this.pokemonAbilitySubscripition = this.pokedexService
         .getPokemonAbilityType(this.ability.url)
         .subscribe((res) => {
-          this.type = res ?? PokemonType.Normal;
+          this.type = res ?? PokemonType.normal;
           this.pokemonAbilitySubscripition?.unsubscribe();
         });
     }

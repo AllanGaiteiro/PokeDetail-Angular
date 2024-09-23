@@ -74,6 +74,7 @@ export class PageListComponent implements OnInit, OnDestroy {
       .getPokemonList(this.pokemonsLenght)
       .subscribe({
         next: (data: Pokemon[]) => {
+          console.log('getPokemonList',data)
           if (data.length > 0) {
             data.map((p) => {
               if (this.pokemonList[p.id - 1]) {

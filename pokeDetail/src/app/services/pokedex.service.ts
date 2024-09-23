@@ -3,14 +3,15 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, forkJoin } from 'rxjs';
 import { map, mergeMap } from 'rxjs/operators';
 import { PokemonData } from '../models/pokemon-data.model';
-import { Pokemon } from '../models/pokemon.model';
+import { Pokemon, PokemonType } from '../models/pokemon.model';
 
 @Injectable({
   providedIn: 'root',
 })
 export class PokedexService {
+
   private baseUrl = 'https://pokeapi.co/api/v2/';
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   private getPokemonByUrl(url: string): Observable<Pokemon> {
     return this.http
@@ -31,7 +32,14 @@ export class PokedexService {
     );
   }
 
-
+  getPokemonAbilityType(url: any): Observable<PokemonType> {
+    return this.http
+      .get<PokemonType>(url)
+      .pipe(map((res) => {
+        console.log('getPokemonAbilityType', res)
+        return res
+      }));
+  }
 
   getPokemon(pokemon: string): Observable<Pokemon> {
     const url = this.baseUrl + 'pokemon/' + pokemon;

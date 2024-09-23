@@ -7,16 +7,13 @@
   <p>
     <strong>Type:</strong>
   </p>
-  <app-pokemon-type
-    *ngFor="let type of pokemon.types"
-    [type]="type"
-  ></app-pokemon-type>
+  <app-pokemon-type *ngFor="let type of pokemon.types" [type]="type"></app-pokemon-type>
 
   <p>
     <strong>Ability:</strong>
   </p>
-  <app-pokemon-ability
-    *ngFor="let ability of pokemon.abilities"
-    [ability]="ability"
-  ></app-pokemon-ability>
+  <!-- div ngFor="let ability of pokemon?.abilities">
+    <app-pokemon-ability [ability]="ability"></app-pokemon-ability>
+  </div ----->
+
 </div>
