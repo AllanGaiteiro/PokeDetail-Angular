@@ -37,4 +37,4 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: pokeDetail/dist/  # Caminho para a pasta de saída do build
+          publish_dir: pokeDetail/dist/poke-detail  # Caminho para a pasta de saída do build
