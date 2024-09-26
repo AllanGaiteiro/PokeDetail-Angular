@@ -1,5 +1,5 @@
 .pokemon-container {
-  padding: 20px;
+  padding: 0px 20px;
   border: 1px solid #ccc;
   border-radius: 10px;
   max-width: 1200px;
@@ -29,6 +29,7 @@
   border-radius: 10px; /* Cantos arredondados */
   padding: 20px; /* Espaçamento interno */
   margin-top: 20px; /* Espaçamento externo */
+  width: 250px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para dar profundidade */
 }
 .section-abilities-list {

@@ -1,0 +1,28 @@
+.header {
+    margin:10px 30px ;
+    text-align: center;
+  }
+  
+  .back-button {
+    position: absolute;
+    left: 40px;
+    display: flex;
+    align-items: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #333;
+    font-size: 1rem;
+    font-weight: bolder;
+  }
+  
+  .back-icon {
+    margin-right: 8px; /* Espaço entre o ícone e o texto */
+    font-size: 1.2rem; /* Tamanho do ícone */
+  }
+  
+  h1 {
+    margin: 0; /* Remove a margem padrão */
+    font-size: 1.5rem; /* Tamanho do título */
+  }
+  

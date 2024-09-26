@@ -1,5 +1,11 @@
 <div>
-  <h1>PokeDetail</h1>
+  <header class="header">
+    <button class="back-button" (click)="goBack()">
+      <span class="back-icon">←</span> <!-- Você pode substituir isso por um ícone SVG ou FontAwesome -->
+      <span class="back-text">Voltar à Lista</span>
+    </button>
+    <h1>PokeDetail</h1>
+  </header>
   <main>
     <router-outlet></router-outlet>
   </main>

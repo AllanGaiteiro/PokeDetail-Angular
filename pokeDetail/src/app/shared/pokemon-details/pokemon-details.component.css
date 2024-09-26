@@ -1,5 +1,9 @@
 .pokemon-details {
-    
+    background-color: #ffffff; /* Cor de fundo do "card" */
+    border-radius: 10px; /* Cantos arredondados */
+    padding: 20px; /* Espaçamento interno */
+    margin-top: 20px; /* Espaçamento externo */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para dar profundidade */
     text-align: left;
   }
   

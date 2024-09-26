@@ -33,16 +33,13 @@ export class PageViewComponent implements OnInit {
     const types = this.pokemon?.types;
     if (!types?.length) return {};
     const colors = types.map(type => `var(--${type}-color)`);
-    if (colors.length === 2) {
-      const gradient = `linear-gradient(135deg, ${colors[0]} 50%, ${colors[1]} 50%)`;
+    if (colors.length === 1) {
+      const gradient = `linear-gradient(60deg, ${'white'} 50%, ${colors[0]} 50%)`;
       return { background: gradient };
     }
-      if (colors.length === 1) {
-      return { background: colors[0] };
-    }
-
-    const step = 100 / colors.length;
-    const gradient = `linear-gradient(135deg, ${colors.map((color, index) => `${color} ${index * step}%`).join(', ')})`;
+    const gradient = `linear-gradient(60deg, ${colors[1]} 50%, ${colors[0]} 50%)`;
     return { background: gradient };
   }
+
 }
+

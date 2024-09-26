@@ -1,0 +1,111 @@
+.pokemon-img-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Estilo básico da Pokébola */
+  .pokeball {
+    position: absolute;
+    top: auto;
+    left: auto;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: red;
+    border: 5px solid black;
+    overflow: hidden;
+    transition: transform 0.5s ease-in-out, background-color 0.5s ease-in-out;
+  }
+  
+  .pokeball-top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background-color: red;
+    transition: background-color 0.5s ease-in-out;
+  }
+  
+  .pokeball-bottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background-color: white;
+    transition: background-color 0.5s ease-in-out;
+  }
+  
+  .pokeball-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 10%;
+    height: 10%;
+    border-radius: 50%;
+    background-color: white;
+    border: 5px solid black;
+    z-index: 10;
+    transition: background-color 0.5s ease-in-out;
+  }
+  
+  /* Quando a Pokébola abre */
+  .pokeball.open {
+    background-color: white; /* Torna a Pokébola completamente branca */
+    border-color: white; /* Torna a borda branca */
+  }
+  
+  /* Torna o topo branco */
+  .pokeball.open .pokeball-top {
+    background-color: white;
+    height: 100%;
+    transform: translateY(-100%);
+    transition: transform 0.5s ease-in-out, background-color 0.5s ease-in-out;
+    z-index: -1;
+    opacity: 0;
+  }
+  
+  /* Torna o fundo branco */
+  
+  /* Centro da Pokébola também fica branco */
+  .pokeball.open .pokeball-center {
+    background-color: white;
+    border-color: white;
+    z-index: -1;
+    opacity: 0;
+
+  }
+  
+/* Estilos base do Pokémon (antes de aparecer) */
+.pokemon {
+    width: 50px; /* Começa pequeno */
+    filter: brightness(100) saturate(0); /* Começa branco */
+    transition: none; /* Sem transição até ficar visível */
+}
+  
+  /* Animação de crescimento e mudança de cor */
+  @keyframes growAndColor {
+    0% {
+      width: 50px; /* Tamanho pequeno no início */
+      filter: brightness(100) saturate(0); /* Branco no início */
+    }
+    75% {
+      width: 100%; /* Cresce suavemente até o tamanho natural (comportamento fluido) */
+      filter: brightness(100) saturate(0); /* Continua branco */
+    }
+    100% {
+      width: 100%; /* Tamanho final */
+      filter: brightness(1) saturate(1); /* Ganha cor ao final */
+    }
+  }
+  
+  /* Quando visível, ativa a animação */
+  .pokemon-visible {
+    animation: growAndColor 1s ease-in-out forwards; /* 4 segundos de animação */
+    width: 100%; /* Certifica que o tamanho final é fluido */
+  }
+  
