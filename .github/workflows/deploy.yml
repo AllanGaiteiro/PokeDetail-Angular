@@ -1,0 +1,40 @@
+name: Deploy Angular Project
+
+on:
+  push:
+    branches:
+      - main  # ou a branch que você utiliza para o deploy
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checkout do código
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      # Configurar Node.js (você pode ajustar a versão se necessário)
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16'
+
+      # Instalar dependências
+      - name: Install dependencies
+        run: |
+          cd pokeDetail
+          npm install
+
+      # Build do projeto Angular
+      - name: Build project
+        run: |
+          cd pokeDetail
+          npm run build --prod
+
+      # Deploy para GitHub Pages (se for esse o destino)
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: pokeDetail/dist/pokeDetail  # Caminho para a pasta de saída do build
